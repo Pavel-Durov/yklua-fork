@@ -12,7 +12,6 @@
 #include "lobject.h"
 #include "ltm.h"
 #include "lzio.h"
-
 #ifdef USE_YK
 #  include <yk.h>
 #endif

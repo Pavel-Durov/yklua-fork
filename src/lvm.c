@@ -15,9 +15,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#ifdef USE_YK
-#include <yk.h>
-#endif
+// #ifdef USE_YK
+// #include <yk.h>
+// #endif
 
 #include "lua.h"
 
@@ -32,7 +32,6 @@
 #include "ltable.h"
 #include "ltm.h"
 #include "lvm.h"
-
 
 /*
 ** By default, use jump tables in the main interpreter loop on gcc
@@ -1145,10 +1144,7 @@ void luaV_finishOp (lua_State *L) {
     lua_assert(isLua(ci)); \
     Proto *p = ci_func(ci)->p; \
     lua_assert(p->code <= pc && pc <= p->code + p->sizecode); \
-    if (isLoopStart(*pc)) \
-        ykloc = &p->yklocs[pc - p->code]; \
-    else \
-        ykloc = NULL; \
+    ykloc = NULL; \
 }
 #endif
 

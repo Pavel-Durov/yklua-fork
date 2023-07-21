@@ -7,9 +7,9 @@
 #define lcode_c
 #define LUA_CORE
 
-#ifdef USE_YK
-#define _DEFAULT_SOURCE /* for reallocarray() */
-#endif
+// #ifdef USE_YK
+// #define _DEFAULT_SOURCE /* for reallocarray() */
+// #endif
 
 #include "lprefix.h"
 
@@ -33,7 +33,6 @@
 #include "lstring.h"
 #include "ltable.h"
 #include "lvm.h"
-
 
 /* Maximum number of registers in a Lua function (must fit in 8 bits) */
 #define MAXREGS		255
@@ -390,17 +389,17 @@ int luaK_code (FuncState *fs, Instruction i) {
   luaM_growvector(fs->ls->L, f->code, fs->pc, f->sizecode, Instruction,
                   MAX_INT, "opcodes");
   f->code[fs->pc++] = i;
-#ifdef USE_YK
-  // YKOPT: Reallocating for every instruction is inefficient.
-  if ((f->yklocs = reallocarray(f->yklocs, fs->pc,
-    sizeof(YkLocation))) == NULL)
-  {
-      luaG_runerror(fs->ls->L, "failed to allocate JIT location");
-  }
-  if (isLoopStart(i))
-      f->yklocs[idx] = yk_location_new();
-  /* `else f->yklocs[idx]` is undefined */
-#endif
+// #ifdef USE_YK
+//   // YKOPT: Reallocating for every instruction is inefficient.
+//   if ((f->yklocs = reallocarray(f->yklocs, fs->pc,
+//     sizeof(YkLocation))) == NULL)
+//   {
+//       luaG_runerror(fs->ls->L, "failed to allocate JIT location");
+//   }
+//   if (isLoopStart(i))
+//       f->yklocs[idx] = yk_location_new();
+//   /* `else f->yklocs[idx]` is undefined */
+// #endif
   savelineinfo(fs, f, fs->ls->lastline);
   return idx;  /* index of new instruction */
 }
