@@ -246,7 +246,6 @@ Proto *luaF_newproto (lua_State *L) {
   f->p = NULL;
   f->sizep = 0;
   f->code = NULL;
-  
 #ifdef USE_YK
   f->yklocs = NULL;
 #endif
