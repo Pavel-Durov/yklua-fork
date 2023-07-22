@@ -407,7 +407,7 @@ LUAI_DDEC(const lu_byte luaP_opmodes[NUM_OPCODES];)
 
 #define opmode(mm,ot,it,t,a,m)  \
     (((mm) << 7) | ((ot) << 6) | ((it) << 5) | ((t) << 4) | ((a) << 3) | (m))
-    
+
 
 /* number of list items to accumulate before a SETLIST instruction */
 #define LFIELDS_PER_FLUSH	50
