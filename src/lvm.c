@@ -15,9 +15,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// #ifdef USE_YK
-// #include <yk.h>
-// #endif
+#ifdef USE_YK
+#include <yk.h>
+#endif
 
 #include "lua.h"
 
