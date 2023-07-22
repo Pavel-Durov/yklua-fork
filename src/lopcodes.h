@@ -9,6 +9,7 @@
 
 #include "llimits.h"
 
+
 /*===========================================================================
   We assume that instructions are unsigned 32-bit integers.
   All instructions have an opcode in the first 7 bits.
@@ -407,7 +408,6 @@ LUAI_DDEC(const lu_byte luaP_opmodes[NUM_OPCODES];)
 #define opmode(mm,ot,it,t,a,m)  \
     (((mm) << 7) | ((ot) << 6) | ((it) << 5) | ((t) << 4) | ((a) << 3) | (m))
     
-
 
 /* number of list items to accumulate before a SETLIST instruction */
 #define LFIELDS_PER_FLUSH	50
