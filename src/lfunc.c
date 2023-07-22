@@ -247,9 +247,9 @@ Proto *luaF_newproto (lua_State *L) {
   f->sizep = 0;
   f->code = NULL;
   
-// #ifdef USE_YK
-//   f->yklocs = NULL;
-// #endif
+#ifdef USE_YK
+  f->yklocs = NULL;
+#endif
   f->sizecode = 0;
   f->lineinfo = NULL;
   f->sizelineinfo = 0;
@@ -270,12 +270,14 @@ Proto *luaF_newproto (lua_State *L) {
 
 
 void luaF_freeproto (lua_State *L, Proto *f) {
-// #ifdef USE_YK
-//   for (int i = 0; i < f->sizecode; i++)
-//     if (isLoopStart(f->code[i]))
-//         yk_location_drop(f->yklocs[i]);
-//   free(f->yklocs);
-// #endif
+#ifdef USE_YK
+  for (int i = 0; i < f->sizecode; i++){
+    if (isLoopStart(f->code[i])){
+      yk_location_drop(f->yklocs[i]);
+    }
+  }
+  free(f->yklocs);
+#endif
   luaM_freearray(L, f->code, f->sizecode);
   luaM_freearray(L, f->p, f->sizep);
   luaM_freearray(L, f->k, f->sizek);
