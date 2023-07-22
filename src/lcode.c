@@ -389,17 +389,17 @@ int luaK_code (FuncState *fs, Instruction i) {
   luaM_growvector(fs->ls->L, f->code, fs->pc, f->sizecode, Instruction,
                   MAX_INT, "opcodes");
   f->code[fs->pc++] = i;
-// #ifdef USE_YK
-//   // YKOPT: Reallocating for every instruction is inefficient.
-//   if ((f->yklocs = reallocarray(f->yklocs, fs->pc,
-//     sizeof(YkLocation))) == NULL)
-//   {
-//       luaG_runerror(fs->ls->L, "failed to allocate JIT location");
-//   }
-//   if (isLoopStart(i))
-//       f->yklocs[idx] = yk_location_new();
-//   /* `else f->yklocs[idx]` is undefined */
-// #endif
+#ifdef USE_YK
+  // YKOPT: Reallocating for every instruction is inefficient.
+  if ((f->yklocs = reallocarray(f->yklocs, fs->pc,
+    sizeof(YkLocation))) == NULL)
+  {
+      luaG_runerror(fs->ls->L, "failed to allocate JIT location");
+  }
+  if (isLoopStart(i))
+      f->yklocs[idx] = yk_location_new();
+  /* `else f->yklocs[idx]` is undefined */
+#endif
   savelineinfo(fs, f, fs->ls->lastline);
   return idx;  /* index of new instruction */
 }
