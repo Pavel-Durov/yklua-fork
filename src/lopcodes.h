@@ -379,15 +379,15 @@ OP_EXTRAARG/*	Ax	extra (larger) argument for previous opcode	*/
 
 LUAI_DDEC(const lu_byte luaP_opmodes[NUM_OPCODES];)
 
-// #ifdef USE_YK
-// /*
-//  * Is the instruction `i` the start of a loop?
-//  *
-//  * YKFIXME: Numeric and Generic loops can be identified by OP_FORLOOP and OP_TFORLOOP opcodes. 
-//  * Other loops like while and repeat-until are harder to identify since they are based on OP_JMP instruction.
-//  */
-// #define isLoopStart(i) (GET_OPCODE(i) == OP_FORLOOP || GET_OPCODE(i) == OP_TFORLOOP)
-// #endif
+#ifdef USE_YK
+/*
+ * Is the instruction `i` the start of a loop?
+ *
+ * YKFIXME: Numeric and Generic loops can be identified by OP_FORLOOP and OP_TFORLOOP opcodes. 
+ * Other loops like while and repeat-until are harder to identify since they are based on OP_JMP instruction.
+ */
+#define isLoopStart(i) (GET_OPCODE(i) == OP_FORLOOP || GET_OPCODE(i) == OP_TFORLOOP)
+#endif
 
 #define getOpMode(m)	(cast(enum OpMode, luaP_opmodes[m] & 7))
 #define testAMode(m)	(luaP_opmodes[m] & (1 << 3))
@@ -406,6 +406,7 @@ LUAI_DDEC(const lu_byte luaP_opmodes[NUM_OPCODES];)
 
 #define opmode(mm,ot,it,t,a,m)  \
     (((mm) << 7) | ((ot) << 6) | ((it) << 5) | ((t) << 4) | ((a) << 3) | (m))
+    
 
 
 /* number of list items to accumulate before a SETLIST instruction */

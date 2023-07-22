@@ -7,9 +7,9 @@
 #define lcode_c
 #define LUA_CORE
 
-// #ifdef USE_YK
-// #define _DEFAULT_SOURCE /* for reallocarray() */
-// #endif
+#ifdef USE_YK
+#define _DEFAULT_SOURCE /* for reallocarray() */
+#endif
 
 #include "lprefix.h"
 
