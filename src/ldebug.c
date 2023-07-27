@@ -916,3 +916,20 @@ int luaG_traceexec (lua_State *L, const Instruction *pc) {
   return 1;  /* keep 'trap' on */
 }
 
+#include <stdio.h>
+
+void print_proto_info(Proto *f){
+  char *source = getstr(f->source);
+  
+  char *vars = NULL;
+  
+  if (f->locvars != NULL && f->locvars->varname != NULL){
+    vars = getstr(f->locvars->varname);
+  }
+  
+  #ifdef USE_YK
+    printf("@@ PROTO @@ %p, source: %s, vars: %s, yklocs: %p\n", f, source, vars, f->yklocs);
+  #else
+    printf("@@ PROTO @@ %p, source: %s, vars: %s \n", f, source, vars);
+  #endif
+}

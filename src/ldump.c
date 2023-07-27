@@ -205,13 +205,15 @@ static void dumpHeader (DumpState *D) {
   dumpInteger(D, LUAC_INT);
   dumpNumber(D, LUAC_NUM);
 }
-
-
+#include <stdio.h>
+#include "ldebug.h"
 /*
 ** dump Lua function as precompiled chunk
 */
 int luaU_dump(lua_State *L, const Proto *f, lua_Writer w, void *data,
               int strip) {
+  printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> luaU_dump");
+  print_proto_info(f);
   DumpState D;
   D.L = L;
   D.writer = w;
@@ -221,6 +223,7 @@ int luaU_dump(lua_State *L, const Proto *f, lua_Writer w, void *data,
   dumpHeader(&D);
   dumpByte(&D, f->sizeupvalues);
   dumpFunction(&D, f, NULL);
+  
   return D.status;
 }
 

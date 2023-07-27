@@ -760,7 +760,6 @@ static void freeupval (lua_State *L, UpVal *uv) {
   luaM_free(L, uv);
 }
 
-
 static void freeobj (lua_State *L, GCObject *o) {
   switch (o->tt) {
     case LUA_VPROTO:
@@ -1483,7 +1482,7 @@ static void entersweep (lua_State *L) {
   g->sweepgc = sweeptolive(L, &g->allgc);
 }
 
-
+// #include <stdio.h>
 /*
 ** Delete all objects in list 'p' until (but not including) object
 ** 'limit'.

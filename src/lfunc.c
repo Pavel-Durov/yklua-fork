@@ -238,10 +238,11 @@ void luaF_close (lua_State *L, StkId level, int status, int yy) {
   }
 }
 
-
+#include <stdio.h>
 Proto *luaF_newproto (lua_State *L) {
   GCObject *o = luaC_newobj(L, LUA_VPROTO, sizeof(Proto));
   Proto *f = gco2p(o);
+  
   f->k = NULL;
   f->sizek = 0;
   f->p = NULL;
@@ -265,16 +266,30 @@ Proto *luaF_newproto (lua_State *L) {
   f->linedefined = 0;
   f->lastlinedefined = 0;
   f->source = NULL;
+  printf("@@ Allocating luaF_newproto f: %p\n", f);
   return f;
 }
 
+#include <stdio.h>
+#include "ldebug.h"
 
 void luaF_freeproto (lua_State *L, Proto *f) {
 #ifdef USE_YK
-  for (int i = 0; i < f->sizecode; i++)
-    if (isLoopStart(f->code[i]))
-        yk_location_drop(f->yklocs[i]);
-  free(f->yklocs);
+  print_proto_info(f);
+  for (int i = 0; i < f->sizecode; i++){
+    if (isLoopStart(f->code[i])){
+        printf("@@ Detected loop instruction [%d]\n", i);
+        if (f->yklocs == NULL){
+          printf("@@ f->yklocs is NULL\n");
+          printf("@@ f->yklocs[i] [%p]\n", f->yklocs[i]);
+        }
+        else{
+          printf("@@ f->yklocs[i] [%p]\n", f->yklocs[i]);
+        }
+        
+    }
+  }
+  // printf("@@ Freeing f->yklocs: %p\n", f->yklocs);
 #endif
   luaM_freearray(L, f->code, f->sizecode);
   luaM_freearray(L, f->p, f->sizep);
@@ -284,6 +299,7 @@ void luaF_freeproto (lua_State *L, Proto *f) {
   luaM_freearray(L, f->locvars, f->sizelocvars);
   luaM_freearray(L, f->upvalues, f->sizeupvalues);
   luaM_free(L, f);
+  printf("@@ Freeing f: %p\n", f);
 }
 
 
@@ -302,4 +318,3 @@ const char *luaF_getlocalname (const Proto *f, int local_number, int pc) {
   }
   return NULL;  /* not found */
 }
-

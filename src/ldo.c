@@ -623,8 +623,9 @@ void luaD_call (lua_State *L, StkId func, int nResults) {
 /*
 ** Similar to 'luaD_call', but does not allow yields during the call.
 */
+#include <stdio.h>
 void luaD_callnoyield (lua_State *L, StkId func, int nResults) {
-  ccall(L, func, nResults, nyci);
+  ccall(L, func, nResults, nyci); //  function call
 }
 
 
@@ -962,13 +963,19 @@ static void f_parser (lua_State *L, void *ud) {
   LClosure *cl;
   struct SParser *p = cast(struct SParser *, ud);
   int c = zgetc(p->z);  /* read first character */
+  #include <stdio.h>
+  
   if (c == LUA_SIGNATURE[0]) {
+    printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Binary mode\n");
     checkmode(L, p->mode, "binary");
     cl = luaU_undump(L, p->z, p->name);
+    print_proto_info(cl->p);
   }
   else {
+    printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Txt mode\n");
     checkmode(L, p->mode, "text");
     cl = luaY_parser(L, p->z, &p->buff, &p->dyd, p->name, c);
+    print_proto_info(cl->p);
   }
   lua_assert(cl->nupvalues == cl->p->sizeupvalues);
   luaF_initupvals(L, cl);

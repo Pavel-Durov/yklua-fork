@@ -32,6 +32,7 @@
 #include "lparser.h"
 #include "lstring.h"
 #include "ltable.h"
+#include "lfunc.h"
 #include "lvm.h"
 
 
@@ -378,6 +379,8 @@ static void removelastinstruction (FuncState *fs) {
   fs->pc--;
 }
 
+#include <stdio.h>
+
 
 /*
 ** Emit instruction 'i', checking for array sizes and saving also its
@@ -392,13 +395,19 @@ int luaK_code (FuncState *fs, Instruction i) {
   f->code[fs->pc++] = i;
 #ifdef USE_YK
   // YKOPT: Reallocating for every instruction is inefficient.
-  if ((f->yklocs = reallocarray(f->yklocs, fs->pc,
-    sizeof(YkLocation))) == NULL)
+  if ((f->yklocs = reallocarray(f->yklocs, fs->pc, sizeof(YkLocation))) == NULL)
   {
       luaG_runerror(fs->ls->L, "failed to allocate JIT location");
   }
-  if (isLoopStart(i))
-      f->yklocs[idx] = yk_location_new();
+  #include "ldebug.h"
+  
+  if (isLoopStart(i)){
+    f->yklocs[idx] = yk_location_new();
+    #include <stdio.h>
+    printf("@@ yklocs[%d] is allocated", idx); 
+    print_proto_info(f);
+  }
+
   /* `else f->yklocs[idx]` is undefined */
 #endif
   savelineinfo(fs, f, fs->ls->lastline);
@@ -437,6 +446,7 @@ int luaK_codeAsBx (FuncState *fs, OpCode o, int a, int bc) {
   lua_assert(a <= MAXARG_A && b <= MAXARG_Bx);
   return luaK_code(fs, CREATE_ABx(o, a, b));
 }
+
 
 
 /*

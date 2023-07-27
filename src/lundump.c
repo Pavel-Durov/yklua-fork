@@ -23,12 +23,23 @@
 #include "lstring.h"
 #include "lundump.h"
 #include "lzio.h"
-
-
 #if !defined(luai_verifycode)
 #define luai_verifycode(L,f)  /* empty */
 #endif
 
+#ifdef USE_YK
+#include <yk.h>
+#endif
+#include "lopcodes.h"
+#ifdef USE_YK
+/*
+ * Is the instruction `i` the start of a loop?
+ *
+ * YKFIXME: Numeric and Generic loops can be identified by OP_FORLOOP and OP_TFORLOOP opcodes. 
+ * Other loops like while and repeat-until are harder to identify since they are based on OP_JMP instruction.
+ */
+#define isLoopStart(i) (GET_OPCODE(i) == OP_FORLOOP || GET_OPCODE(i) == OP_TFORLOOP)
+#endif
 
 typedef struct {
   lua_State *L;
@@ -196,9 +207,32 @@ static void loadProtos (LoadState *S, Proto *f) {
   for (i = 0; i < n; i++)
     f->p[i] = NULL;
   for (i = 0; i < n; i++) {
+    #include <stdio.h>
+    printf("loadProtos > luaF_newproto\n");
     f->p[i] = luaF_newproto(S->L);
     luaC_objbarrier(S->L, f, f->p[i]);
     loadFunction(S, f->p[i], f->source);
+    #ifdef USE_YK
+      #include <stdlib.h>
+      int found = 0;
+      f->p[i]->yklocs = malloc(sizeof(YkLocation));
+      // printf("@@ f: %p, sizecode: [%d]\n", f->p[i], f->p[i]->sizecode);
+      print_proto_info(f->p[i]);
+      int s = f->p[i]->sizecode;
+      for (int ci = 0; ci < s; ci++){
+        if (isLoopStart(f->p[i]->code[ci])){
+            printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>> Readded new location [%d]\n", i);
+            f->p[i]->yklocs[ci] = yk_location_new();
+            print_proto_info(f->p[i]);
+            found = 1;
+        }
+      }
+      if (found == 0){
+        printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>> No loop found. for %p\n", f->p[i]);
+      }else{
+        printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>> Loop found. for %p\n", f->p[i]);
+      }
+    #endif
   }
 }
 
@@ -265,6 +299,7 @@ static void loadFunction (LoadState *S, Proto *f, TString *psource) {
   loadCode(S, f);
   loadConstants(S, f);
   loadUpvalues(S, f);
+  printf("loadFunction > loadProtos\n");
   loadProtos(S, f);
   loadDebug(S, f);
 }
@@ -308,7 +343,11 @@ static void checkHeader (LoadState *S) {
 /*
 ** Load precompiled chunk.
 */
+#include <stdio.h>
+#include "lfunc.h"
+#include <stdlib.h>
 LClosure *luaU_undump(lua_State *L, ZIO *Z, const char *name) {
+  printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> luaU_undump\n");
   LoadState S;
   LClosure *cl;
   if (*name == '@' || *name == '=')
@@ -323,7 +362,10 @@ LClosure *luaU_undump(lua_State *L, ZIO *Z, const char *name) {
   cl = luaF_newLclosure(L, loadByte(&S));
   setclLvalue2s(L, L->top, cl);
   luaD_inctop(L);
-  cl->p = luaF_newproto(L);
+  
+  printf("luaU_undump > luaF_newproto\n");
+  Proto *f = luaF_newproto(L);
+  cl->p = f;
   luaC_objbarrier(L, cl, cl->p);
   loadFunction(&S, cl->p, NULL);
   lua_assert(cl->nupvalues == cl->p->sizeupvalues);

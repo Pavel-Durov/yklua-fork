@@ -599,12 +599,15 @@ static void doREPL (lua_State *L) {
 
 /* }================================================================== */
 
+#include <stdio.h>
+
 
 /*
 ** Main body of stand-alone interpreter (to be called in protected mode).
 ** Reads the options and handles them all.
 */
 static int pmain (lua_State *L) {
+  printf("pmain\n");
   int argc = (int)lua_tointeger(L, 1);
   char **argv = (char **)lua_touserdata(L, 2);
   int script;
@@ -623,7 +626,7 @@ static int pmain (lua_State *L) {
   }
   luaL_openlibs(L);  /* open standard libraries */
   createargtable(L, argv, argc, script);  /* create table 'arg' */
-  lua_gc(L, LUA_GCGEN, 0, 0);  /* GC in generational mode */
+  // lua_gc(L, LUA_GCGEN, 0, 0);  /* GC in generational mode */
   if (!(args & has_E)) {  /* no option '-E'? */
     if (handle_luainit(L) != LUA_OK)  /* run LUA_INIT */
       return 0;  /* error running LUA_INIT */
@@ -648,6 +651,7 @@ static int pmain (lua_State *L) {
 
 
 int main (int argc, char **argv) {
+  printf("main\n");
   int status, result;
   lua_State *L = luaL_newstate();  /* create state */
   if (L == NULL) {
