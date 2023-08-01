@@ -217,7 +217,7 @@ static void loadProtos (LoadState *S, Proto *f) {
       f->p[i]->yklocs = malloc(sizeof(YkLocation));
       int s = f->p[i]->sizecode;
       for (int ci = 0; ci < s; ci++){
-        set_yk_locs(f->code[ci], f, ci);
+        set_yk_locs(f->code[ci], f->p[i], ci);
       }
     #endif
   }
