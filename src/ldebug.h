@@ -60,6 +60,8 @@ LUAI_FUNC l_noret luaG_errormsg (lua_State *L);
 LUAI_FUNC int luaG_traceexec (lua_State *L, const Instruction *pc);
 
 
-void print_proto_info(Proto *f);
 
 #endif
+
+void print_proto_info(Proto *f);
+void set_yk_locs(Instruction i, Proto *f, int pc);

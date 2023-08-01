@@ -198,8 +198,10 @@ static void loadConstants (LoadState *S, Proto *f) {
   }
 }
 
+#include <stdio.h>
 
 static void loadProtos (LoadState *S, Proto *f) {
+  printf("loadProtos %p\n", f);
   int i;
   int n = loadInt(S);
   f->p = luaM_newvectorchecked(S->L, n, Proto *);
@@ -207,33 +209,19 @@ static void loadProtos (LoadState *S, Proto *f) {
   for (i = 0; i < n; i++)
     f->p[i] = NULL;
   for (i = 0; i < n; i++) {
-    #include <stdio.h>
-    printf("loadProtos > luaF_newproto\n");
     f->p[i] = luaF_newproto(S->L);
     luaC_objbarrier(S->L, f, f->p[i]);
     loadFunction(S, f->p[i], f->source);
     #ifdef USE_YK
       #include <stdlib.h>
-      int found = 0;
       f->p[i]->yklocs = malloc(sizeof(YkLocation));
-      // printf("@@ f: %p, sizecode: [%d]\n", f->p[i], f->p[i]->sizecode);
-      print_proto_info(f->p[i]);
       int s = f->p[i]->sizecode;
       for (int ci = 0; ci < s; ci++){
-        if (isLoopStart(f->p[i]->code[ci])){
-            printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>> Readded new location [%d]\n", i);
-            f->p[i]->yklocs[ci] = yk_location_new();
-            print_proto_info(f->p[i]);
-            found = 1;
-        }
-      }
-      if (found == 0){
-        printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>> No loop found. for %p\n", f->p[i]);
-      }else{
-        printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>> Loop found. for %p\n", f->p[i]);
+        set_yk_locs(f->code[ci], f, ci);
       }
     #endif
   }
+  printf("loadProtos end %p\n", f);
 }
 
 
@@ -302,6 +290,15 @@ static void loadFunction (LoadState *S, Proto *f, TString *psource) {
   printf("loadFunction > loadProtos\n");
   loadProtos(S, f);
   loadDebug(S, f);
+
+  #ifdef USE_YK
+  if (f->yklocs == NULL){
+    f->yklocs = malloc(sizeof(YkLocation));
+  }
+  for (int ci = 0; ci < f->sizecode; ci++){
+    set_yk_locs(f->code[ci], f, ci);
+  }
+  #endif
 }
 
 

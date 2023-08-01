@@ -400,13 +400,7 @@ int luaK_code (FuncState *fs, Instruction i) {
       luaG_runerror(fs->ls->L, "failed to allocate JIT location");
   }
   #include "ldebug.h"
-  
-  if (isLoopStart(i)){
-    f->yklocs[idx] = yk_location_new();
-    #include <stdio.h>
-    printf("@@ yklocs[%d] is allocated", idx); 
-    print_proto_info(f);
-  }
+  set_yk_locs(i, f, idx);
 
   /* `else f->yklocs[idx]` is undefined */
 #endif

@@ -275,12 +275,12 @@ Proto *luaF_newproto (lua_State *L) {
 
 void luaF_freeproto (lua_State *L, Proto *f) {
 #ifdef USE_YK
-  print_proto_info(f);
   for (int i = 0; i < f->sizecode; i++){
     if (isLoopStart(f->code[i])){
-        printf("@@ Detected loop instruction [%d]\n", i);
+        printf("@@ Detected loop instruction [%d] for f: %p\n", i, f);
+        print_proto_info(f);
         if (f->yklocs == NULL){
-          printf("@@ f->yklocs is NULL\n");
+          printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@' f->yklocs is NULL!!!!!!\n");
           printf("@@ f->yklocs[i] [%p]\n", f->yklocs[i]);
         }
         else{

@@ -921,15 +921,37 @@ int luaG_traceexec (lua_State *L, const Instruction *pc) {
 void print_proto_info(Proto *f){
   char *source = getstr(f->source);
   
-  char *vars = NULL;
+  // char *vars = NULL;
   
-  if (f->locvars != NULL && f->locvars->varname != NULL){
-    vars = getstr(f->locvars->varname);
-  }
+  // if (f->locvars != NULL && f->locvars->varname != NULL){
+  //   vars = getstr(f->locvars->varname);
+  // }
   
   #ifdef USE_YK
-    printf("@@ PROTO @@ %p, source: %s, vars: %s, yklocs: %p\n", f, source, vars, f->yklocs);
+    // printf("@@ PROTO @@ %p, source: %s, vars: %s, yklocs: %p\n", f, source, vars, f->yklocs);
+    printf("@@ PROTO @@ f: %p, yklocs: %p\n", f, f->yklocs);
   #else
-    printf("@@ PROTO @@ %p, source: %s, vars: %s \n", f, source, vars);
+    // printf("@@ PROTO @@ %p, source: %s, vars: %s \n", f, source, vars);
+  #endif
+}
+
+#ifdef USE_YK
+/*
+ * Is the instruction `i` the start of a loop?
+ *
+ * YKFIXME: Numeric and Generic loops can be identified by OP_FORLOOP and OP_TFORLOOP opcodes. 
+ * Other loops like while and repeat-until are harder to identify since they are based on OP_JMP instruction.
+ */
+#define isLoopStart(i) (GET_OPCODE(i) == OP_FORLOOP || GET_OPCODE(i) == OP_TFORLOOP)
+#endif
+
+void set_yk_locs(Instruction i, Proto *f, int pc){
+  #ifdef USE_YK
+  if (isLoopStart(i)){
+    f->yklocs[pc] = yk_location_new();
+    #include <stdio.h>
+    printf("@@ yklocs[%d] is allocated", pc); 
+    print_proto_info(f);
+  }
   #endif
 }

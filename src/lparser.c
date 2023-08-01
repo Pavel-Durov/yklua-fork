@@ -1957,7 +1957,6 @@ LClosure *luaY_parser (lua_State *L, ZIO *z, Mbuffer *buff,
   luaC_objbarrier(L, cl, cl->p);
   funcstate.f->source = luaS_new(L, name);  /* create and anchor TString */
   luaC_objbarrier(L, funcstate.f, funcstate.f->source);
-  print_proto_info(funcstate.f);
   lexstate.buff = buff;
   lexstate.dyd = dyd;
   dyd->actvar.n = dyd->gt.n = dyd->label.n = 0;
