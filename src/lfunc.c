@@ -289,7 +289,6 @@ void luaF_freeproto (lua_State *L, Proto *f) {
         
     }
   }
-  // printf("@@ Freeing f->yklocs: %p\n", f->yklocs);
 #endif
   luaM_freearray(L, f->code, f->sizecode);
   luaM_freearray(L, f->p, f->sizep);
@@ -299,7 +298,6 @@ void luaF_freeproto (lua_State *L, Proto *f) {
   luaM_freearray(L, f->locvars, f->sizelocvars);
   luaM_freearray(L, f->upvalues, f->sizeupvalues);
   luaM_free(L, f);
-  printf("@@ Freeing f: %p\n", f);
 }
 
 
