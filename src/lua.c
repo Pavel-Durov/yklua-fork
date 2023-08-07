@@ -607,7 +607,6 @@ static void doREPL (lua_State *L) {
 ** Reads the options and handles them all.
 */
 static int pmain (lua_State *L) {
-  printf("pmain\n");
   int argc = (int)lua_tointeger(L, 1);
   char **argv = (char **)lua_touserdata(L, 2);
   int script;
