@@ -945,13 +945,14 @@ void print_proto_info(Proto *f){
 #define isLoopStart(i) (GET_OPCODE(i) == OP_FORLOOP || GET_OPCODE(i) == OP_TFORLOOP)
 #endif
 
+#include <stdio.h>
+
 void set_yk_locs(Instruction i, Proto *f, int pc){
   #ifdef USE_YK
   if (isLoopStart(i)){
     lua_assert(f->yklocs != NULL);
-    f->yklocs[pc] = yk_location_new();
-    #include <stdio.h>
-    printf("@@ yklocs[%d] is allocatedfor f: %p\n", pc); 
+    f->yklocs[pc] = yk_location_new();    
+    printf("@@ f: %p, yklocs[%d] is allocated\n", pc); 
   }
   #endif
 }

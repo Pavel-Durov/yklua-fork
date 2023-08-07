@@ -201,7 +201,6 @@ static void loadConstants (LoadState *S, Proto *f) {
 #include <stdio.h>
 
 static void loadProtos (LoadState *S, Proto *f) {
-  printf("loadProtos %p\n", f);
   int i;
   int n = loadInt(S);
   f->p = luaM_newvectorchecked(S->L, n, Proto *);
@@ -221,7 +220,6 @@ static void loadProtos (LoadState *S, Proto *f) {
       }
     #endif
   }
-  printf("loadProtos end %p\n", f);
 }
 
 
@@ -287,7 +285,6 @@ static void loadFunction (LoadState *S, Proto *f, TString *psource) {
   loadCode(S, f);
   loadConstants(S, f);
   loadUpvalues(S, f);
-  printf("loadFunction > loadProtos\n");
   loadProtos(S, f);
   loadDebug(S, f);
 
@@ -344,7 +341,7 @@ static void checkHeader (LoadState *S) {
 #include "lfunc.h"
 #include <stdlib.h>
 LClosure *luaU_undump(lua_State *L, ZIO *Z, const char *name) {
-  printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> luaU_undump\n");
+  printf("@@ luaU_undump\n");
   LoadState S;
   LClosure *cl;
   if (*name == '@' || *name == '=')
@@ -359,8 +356,6 @@ LClosure *luaU_undump(lua_State *L, ZIO *Z, const char *name) {
   cl = luaF_newLclosure(L, loadByte(&S));
   setclLvalue2s(L, L->top, cl);
   luaD_inctop(L);
-  
-  printf("luaU_undump > luaF_newproto\n");
   Proto *f = luaF_newproto(L);
   cl->p = f;
   luaC_objbarrier(L, cl, cl->p);

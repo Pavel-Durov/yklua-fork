@@ -282,6 +282,7 @@ void luaF_freeproto (lua_State *L, Proto *f) {
         // yk_location_drop(f->yklocs[i]);
     }
   }
+  // free(f->yklocs);
 #endif
   luaM_freearray(L, f->code, f->sizecode);
   luaM_freearray(L, f->p, f->sizep);
