@@ -6,11 +6,3 @@ local dofile = function ()
 end
 
 dofile()
-
--- works:
--- dofile('main_crash.lua') 
-
--- loadProtos(f)
--- b src/lcode.c:407 -- Assign Location for Loops
--- b src/ldo.c:979 -- Text compilation
--- b luaU_dump

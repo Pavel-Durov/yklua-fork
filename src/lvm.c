@@ -1189,13 +1189,13 @@ uint32_t luaV_execute (lua_State *L, CallInfo *ci) {
   for (;;) {
     Instruction i;  /* instruction being executed */
 #ifdef USE_YK
-    // YkLocation *ykloc;
-    // lookup_ykloc();
+    YkLocation *ykloc;
+    lookup_ykloc();
 #endif
     StkId ra;  /* instruction's A register */
     vmfetch();
 #ifdef USE_YK
-    // yk_mt_control_point(G(L)->yk_mt, ykloc);
+    yk_mt_control_point(G(L)->yk_mt, ykloc);
 #endif
     #if 0
       /* low-level line tracing for debugging Lua */
