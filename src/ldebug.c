@@ -951,8 +951,7 @@ void set_yk_locs(Instruction i, Proto *f, int pc){
     lua_assert(f->yklocs != NULL);
     f->yklocs[pc] = yk_location_new();
     #include <stdio.h>
-    printf("@@ yklocs[%d] is allocated", pc); 
-    print_proto_info(f);
+    printf("@@ yklocs[%d] is allocatedfor f: %p\n", pc); 
   }
   #endif
 }

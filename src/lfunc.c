@@ -279,7 +279,7 @@ void luaF_freeproto (lua_State *L, Proto *f) {
         printf("@@ Detected loop instruction [%d] for f: %p\n", i, f);
         print_proto_info(f);
         lua_assert(f->yklocs != NULL);
-        yk_location_drop(f->yklocs[i]);
+        // yk_location_drop(f->yklocs[i]);
     }
   }
 #endif
