@@ -966,12 +966,10 @@ static void f_parser (lua_State *L, void *ud) {
   #include <stdio.h>
   
   if (c == LUA_SIGNATURE[0]) {
-    printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Binary mode\n");
     checkmode(L, p->mode, "binary");
     cl = luaU_undump(L, p->z, p->name);
   }
   else {
-    printf("@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Txt mode\n");
     checkmode(L, p->mode, "text");
     cl = luaY_parser(L, p->z, &p->buff, &p->dyd, p->name, c);
   }

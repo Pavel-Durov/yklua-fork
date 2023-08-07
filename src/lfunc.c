@@ -266,7 +266,6 @@ Proto *luaF_newproto (lua_State *L) {
   f->linedefined = 0;
   f->lastlinedefined = 0;
   f->source = NULL;
-  printf("@@ Allocating luaF_newproto f: %p\n", f);
   return f;
 }
 
@@ -279,14 +278,8 @@ void luaF_freeproto (lua_State *L, Proto *f) {
     if (isLoopStart(f->code[i])){
         printf("@@ Detected loop instruction [%d] for f: %p\n", i, f);
         print_proto_info(f);
-        if (f->yklocs == NULL){
-          printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@' f->yklocs is NULL!!!!!!\n");
-          printf("@@ f->yklocs[i] [%p]\n", f->yklocs[i]);
-        }
-        else{
-          printf("@@ f->yklocs[i] [%p]\n", f->yklocs[i]);
-        }
-        
+        lua_assert(f->yklocs != NULL);
+        yk_location_drop(f->yklocs[i]);
     }
   }
 #endif
