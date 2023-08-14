@@ -63,7 +63,7 @@ FAIL: all.lua attrib.lua big.lua bitwise.lua calls.lua constructs.lua cstack.lua
 | vararg.lua     | Working |                                                   |
 | db.lua         | Failing | [issue](https://github.com/ykjit/yklua/issues/38) |
 | all.lua        | Failing |                                                   |
-| attrib.lua     | Failing |                                                   |
+| attrib.lua     | Failing | [issue](https://github.com/ykjit/yklua/issues/42) |
 | big.lua        | Failing |                                                   |
 | bitwise.lua    | Failing | [issue](https://github.com/ykjit/yklua/issues/40) |
 | strings.lua    | Failing | [issue](https://github.com/ykjit/yklua/issues/39) |
