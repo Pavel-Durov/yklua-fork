@@ -6,6 +6,8 @@
 #include "ldebug.h"
 #include <stdlib.h>
 #include <yk.h>
+#import "stdio.h"
+#include <stdlib.h>
 
 #define _DEFAULT_SOURCE /* for reallocarray() */
 
@@ -18,6 +20,15 @@
  *  Yk tracing locations are allocated using both of these methods 
  *  using `yk_set_location` and `yk_set_locations` respectively.
 */
+
+static int LYK_VERBOSE = -1;
+
+int get_is_verbose() {
+  if (LYK_VERBOSE == -1){
+    LYK_VERBOSE = getenv("LYK_VERBOSE") != NULL;
+  }
+  return LYK_VERBOSE;
+}
 
 /*
  *  Is the instruction `i` the start of a loop?
@@ -42,36 +53,63 @@ inline YkLocation *yk_lookup_ykloc(CallInfo *ci, Instruction *pc){
 }
 
 inline void yk_set_location(Proto *f, Instruction i, int idx, int pc) {
+  debug_print_proto_info("yk_set_location", f);
   // YKOPT: Reallocating for every instruction is inefficient.
   f->yklocs = reallocarray(f->yklocs, pc, sizeof(YkLocation));
   lua_assert(f->yklocs != NULL && "Expected yklocs to be defined!");
   if (is_loop_start(i))
   {
     f->yklocs[idx] = yk_location_new();
+    if (get_is_verbose()){
+      printf("[DEBUG] yk_set_location. f: %p, i: %d!\n", f, idx);
+    }
   }
 }
 
 inline void yk_set_locations(Proto *f) {
+  if (get_is_verbose()){
+    printf("[DEBUG] yk_set_locations. f: %p\n", f);
+  }
   f->yklocs = calloc(f->sizecode, sizeof(YkLocation));
   lua_assert(f->yklocs != NULL && "Expected yklocs to be defined!");
   for (int i = 0; i < f->sizecode; i++){
      if (is_loop_start(i)){
       f->yklocs[i] = yk_location_new();
+      if (get_is_verbose()){
+        printf("[DEBUG] yk_set_locations. f: %p, i: %d!\n", f, i);
+      }
     }
   }
 }
 
 void free_loc(Proto *f, Instruction i, int idx) {
   if (is_loop_start(i)) {
+    if (get_is_verbose()){
+      printf("[DEBUG] Freeing location (loop detected). f: %p, yklocs: %p, index: %d\n", f, f->yklocs, idx);
+    }
     yk_location_drop(f->yklocs[idx]);
   }
 }
 
 inline void yk_free_locactions(Proto *f) {
-  for (int i = 0; i < f->sizecode; i++) {
-    free_loc(f, f->code[i], i);
+  if (f->yklocs != NULL){
+    for (int i = 0; i < f->sizecode; i++) {
+      free_loc(f, f->code[i], i);
+    }
+    free(f->yklocs);
+    f->yklocs = NULL;
+  }else{
+    if (get_is_verbose()){
+      printf("[DEBUG] YK Locations are NULL! f: %p\n", f);
+    }
   }
-  free(f->yklocs);
-  f->yklocs = NULL;
 }
+
+void debug_print_proto_info(char *msg, Proto *f){
+  if (get_is_verbose()){
+    // printf("[DEBUG] %s. f: %p, yklocs: %p\n", msg, f, f->yklocs);
+    printf("[DEBUG] %s. f: %p\n", msg, f);
+  }
+}
+
 #endif // USE_YK

@@ -13,4 +13,6 @@ void yk_free_locactions(Proto *f);
 
 YkLocation* yk_lookup_ykloc(CallInfo *ci, Instruction *pc);
 
+void debug_print_proto_info(char *msg, Proto *f);
+
 #endif // __LYK_H

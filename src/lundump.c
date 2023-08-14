@@ -145,10 +145,15 @@ static TString *loadString (LoadState *S, Proto *p) {
 
 
 static void loadCode (LoadState *S, Proto *f) {
+  debug_print_proto_info("loadCode", f);
   int n = loadInt(S);
   f->code = luaM_newvectorchecked(S->L, n, Instruction);
   f->sizecode = n;
   loadVector(S, f->code, n);
+  #ifdef USE_YK
+  #include "lyk.h"
+  yk_set_locations(f);
+  #endif
 }
 
 
@@ -266,13 +271,13 @@ static void loadFunction (LoadState *S, Proto *f, TString *psource) {
   f->is_vararg = loadByte(S);
   f->maxstacksize = loadByte(S);
   loadCode(S, f);
+  #ifdef USE_YK
+  yk_set_locations(f);
+  #endif
   loadConstants(S, f);
   loadUpvalues(S, f);
   loadProtos(S, f);
   loadDebug(S, f);
-  #ifdef USE_YK
-  yk_set_locations(f);
-  #endif
 }
 
 
