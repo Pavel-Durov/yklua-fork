@@ -1,5 +1,6 @@
 #ifdef USE_YK
-
+#include "stdio.h"
+#include <pthread.h>
 #include "lyk.h"
 #include "lobject.h"
 #include "lopcodes.h"
@@ -65,7 +66,7 @@ inline void yk_set_location(Proto *f, Instruction i, int idx, int pc) {
     }
   }
 }
-
+ = 
 inline void yk_set_locations(Proto *f) {
   if (get_is_verbose()){
     printf("[DEBUG] yk_set_locations. f: %p\n", f);
@@ -92,7 +93,10 @@ void free_loc(Proto *f, Instruction i, int idx) {
 }
 
 inline void yk_free_locactions(Proto *f) {
+  // Funciton prototypes load can fail before we initialise yklocations.
+  // This is a workaround to prevent segfaults.
   if (f->yklocs != NULL){
+    printf("[DEBUG] yk_free_locactions thread: %lu\n", pthread_self());
     for (int i = 0; i < f->sizecode; i++) {
       free_loc(f, f->code[i], i);
     }

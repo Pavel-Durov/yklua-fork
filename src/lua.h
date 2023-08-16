@@ -35,7 +35,6 @@
 /* option for multiple returns in 'lua_pcall' and 'lua_call' */
 #define LUA_MULTRET	(-1)
 
-
 /*
 ** Pseudo-indices
 ** (-LUAI_MAXSTACK is the minimum valid index; we keep some free empty

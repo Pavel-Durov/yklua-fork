@@ -530,6 +530,8 @@ LUA_API void lua_pushinteger (lua_State *L, lua_Integer n) {
 LUA_API const char *lua_pushlstring (lua_State *L, const char *s, size_t len) {
   TString *ts;
   lua_lock(L);
+  #include "stdio.h"
+  printf("[DEBUG] lua_pushlstring: %s\n", s);
   ts = (len == 0) ? luaS_new(L, "") : luaS_newlstr(L, s, len);
   setsvalue2s(L, L->top, ts);
   api_incr_top(L);
@@ -550,6 +552,9 @@ LUA_API const char *lua_pushstring (lua_State *L, const char *s) {
     s = getstr(ts);  /* internal copy's address */
   }
   api_incr_top(L);
+  #include <pthread.h>
+  #include "stdio.h"
+  printf("[DEBUG] lapi.c. lua_pushstring thread: %lu\n", pthread_self());
   luaC_checkGC(L);
   lua_unlock(L);
   return s;

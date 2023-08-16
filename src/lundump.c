@@ -6,7 +6,7 @@
 
 #define lundump_c
 #define LUA_CORE
-
+#include <pthread.h>
 #include "lprefix.h"
 
 
@@ -41,6 +41,8 @@ typedef struct {
 
 
 static l_noret error (LoadState *S, const char *why) {
+  #include "stdio.h"
+  printf("[DEBUG] error %s\n", why);
   luaO_pushfstring(S->L, "%s: bad binary format (%s)", S->name, why);
   luaD_throw(S->L, LUA_ERRSYNTAX);
 }
@@ -145,15 +147,27 @@ static TString *loadString (LoadState *S, Proto *p) {
 
 
 static void loadCode (LoadState *S, Proto *f) {
-  debug_print_proto_info("loadCode", f);
+  // debug_print_proto_info("loadCode", f);
+  #include "stdio.h"
+  printf("[DEBUG] loadCode thread: %lu\n", pthread_self());
+  printf("loadCode:0 %p\n", f);
   int n = loadInt(S);
+  printf("loadCode:1 %p\n", f);
   f->code = luaM_newvectorchecked(S->L, n, Instruction);
+  printf("loadCode:2 %p\n", f);
   f->sizecode = n;
-  loadVector(S, f->code, n);
+  printf("loadCode:3 %p\n", f);
+
   #ifdef USE_YK
   #include "lyk.h"
+  printf("loadCode:5");
   yk_set_locations(f);
   #endif
+  
+  loadVector(S, f->code, n);
+  printf("loadCode:4 %p\n", f);
+  
+  printf("loadCode:6");
 }
 
 

@@ -41,7 +41,7 @@ run_docker_ci_job # local path to https://github.com/softdevteam/buildbot_config
 
 ### State of Tests
 
-| Test           | Status  | Issue                                             | 
+| Test           | Status  | Issue                                             |
 | -------------- | ------- | ------------------------------------------------- |
 | api.lua        | Working |                                                   |
 | bwcoercion.lua | Working |                                                   |
@@ -58,21 +58,21 @@ run_docker_ci_job # local path to https://github.com/softdevteam/buildbot_config
 | tracegc.lua    | Working |                                                   |
 | utf8.lua       | Working |                                                   |
 | vararg.lua     | Working |                                                   |
+| cstack.lua     | Working |                                                   |
 | db.lua         | Failing | [issue](https://github.com/ykjit/yklua/issues/38) |
-| all.lua        | Failing |                                                   |
+| all.lua        | Failing | None                                              |
 | attrib.lua     | Failing | [issue](https://github.com/ykjit/yklua/issues/42) |
-| big.lua        | Failing |                                                   |
+| big.lua        | Failing | TODO                                              |
 | bitwise.lua    | Failing | [issue](https://github.com/ykjit/yklua/issues/40) |
 | strings.lua    | Failing | [issue](https://github.com/ykjit/yklua/issues/39) |
 | calls.lua      | Failing | [issue](https://github.com/ykjit/yklua/issues/43) |
 | constructs.lua | Failing | [issue](https://github.com/ykjit/yklua/issues/44) |
-| cstack.lua     | Failing |                                                   |
-| errors.lua     | Failing |                                                   |
-| gc.lua         | Failing |                                                   |
-| heavy.lua      | Failing |                                                   |
-| locals.lua     | Failing |                                                   |
-| main.lua       | Failing |                                                   |
-| math.lua       | Failing |                                                   |
-| nextvar.lua    | Failing |                                                   |
-| sort.lua       | Failing |                                                   |
-| verybig.lua    | Failing |                                                   |
+| errors.lua     | Failing | [issue](https://github.com/ykjit/yklua/issues/48)                                              |
+| gc.lua         | Failing | TODO                                              |
+| heavy.lua      | Failing | TODO                                              |
+| locals.lua     | Failing | TODO                                              |
+| main.lua       | Failing | TODO                                              |
+| math.lua       | Failing | [issue](https://github.com/ykjit/yklua/issues/47) |
+| nextvar.lua    | Failing | TODO                                              |
+| sort.lua       | Failing | [issue](https://github.com/ykjit/yklua/issues/46) |
+| verybig.lua    | Failing | TODO                                              |

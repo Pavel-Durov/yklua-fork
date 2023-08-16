@@ -3,7 +3,8 @@
 ** Garbage Collector
 ** See Copyright Notice in lua.h
 */
-
+#include "stdio.h"
+#include <pthread.h>
 #define lgc_c
 #define LUA_CORE
 
@@ -762,6 +763,7 @@ static void freeupval (lua_State *L, UpVal *uv) {
 
 
 static void freeobj (lua_State *L, GCObject *o) {
+  // printf("[DEBUG] freeobj %lu\n", pthread_self());
   switch (o->tt) {
     case LUA_VPROTO:
       luaF_freeproto(L, gco2p(o));

@@ -164,13 +164,14 @@
 ** 'condchangemem' is used only for heavy tests (forcing a full
 ** GC cycle on every opportunity)
 */
+#include "stdio.h"
 #define luaC_condGC(L,pre,pos) \
+	printf("%s %s:%d\n", __func__, __FILE__, __LINE__); \
 	{ if (G(L)->GCdebt > 0) { pre; luaC_step(L); pos;}; \
 	  condchangemem(L,pre,pos); }
 
 /* more often than not, 'pre'/'pos' are empty */
 #define luaC_checkGC(L)		luaC_condGC(L,(void)0,(void)0)
-
 
 #define luaC_barrier(L,p,v) (  \
 	(iscollectable(v) && isblack(p) && iswhite(gcvalue(v))) ?  \
