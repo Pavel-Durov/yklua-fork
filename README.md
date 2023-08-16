@@ -51,7 +51,6 @@ run_docker_ci_job # local path to https://github.com/softdevteam/buildbot_config
 | files.lua      | Working |                                                   |
 | gengc.lua      | Working |                                                   |
 | goto.lua       | Working |                                                   |
-| literals.lua   | Working |                                                   |
 | pm.lua         | Working |                                                   |
 | tpack.lua      | Working |                                                   |
 | tracegc.lua    | Working |                                                   |
@@ -65,14 +64,15 @@ run_docker_ci_job # local path to https://github.com/softdevteam/buildbot_config
 | strings.lua    | Failing | [issue](https://github.com/ykjit/yklua/issues/39) |
 | calls.lua      | Failing | [issue](https://github.com/ykjit/yklua/issues/43) |
 | constructs.lua | Failing | [issue](https://github.com/ykjit/yklua/issues/44) |
-| errors.lua     | Failing | [issue](https://github.com/ykjit/yklua/issues/48) |                                             |
+| errors.lua     | Failing | [issue](https://github.com/ykjit/yklua/issues/48) |                                             
 | math.lua       | Failing | [issue](https://github.com/ykjit/yklua/issues/47) |
 | sort.lua       | Failing | [issue](https://github.com/ykjit/yklua/issues/46) |
+| nextvar.lua    | Failing | [issue](https://github.com/ykjit/yklua/issues/53) |
+| gc.lua         | Failing | [issue](https://github.com/ykjit/yklua/issues/52) |
 | coroutine.lua  | Failing | TODO                                              |
 | all.lua        | Failing | TODO                                              |
 | big.lua        | Failing | TODO                                              |
-| gc.lua         | Failing | TODO                                              |
 | heavy.lua      | Failing | TODO                                              |
 | main.lua       | Failing | TODO                                              |
-| nextvar.lua    | Failing | TODO                                              |
 | verybig.lua    | Failing | TODO                                              |
+| literals.lua   | Failing | TODO                                              |
