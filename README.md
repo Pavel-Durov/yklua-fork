@@ -54,7 +54,6 @@ run_docker_ci_job # local path to https://github.com/softdevteam/buildbot_config
 | pm.lua         | Working |                                                   |
 | tpack.lua      | Working |                                                   |
 | tracegc.lua    | Working |                                                   |
-| utf8.lua       | Working |                                                   |
 | vararg.lua     | Working |                                                   |
 | cstack.lua     | Working |                                                   |
 | locals.lua     | Working |                                                   |
@@ -69,6 +68,7 @@ run_docker_ci_job # local path to https://github.com/softdevteam/buildbot_config
 | sort.lua       | Failing | [issue](https://github.com/ykjit/yklua/issues/46) |
 | nextvar.lua    | Failing | [issue](https://github.com/ykjit/yklua/issues/53) |
 | gc.lua         | Failing | [issue](https://github.com/ykjit/yklua/issues/52) |
+| utf8.lua       | Failing | [issue](https://github.com/ykjit/yklua/issues/54) |
 | coroutine.lua  | Failing | TODO                                              |
 | all.lua        | Failing | TODO                                              |
 | big.lua        | Failing | TODO                                              |
