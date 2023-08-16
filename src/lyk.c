@@ -66,7 +66,7 @@ inline void yk_set_location(Proto *f, Instruction i, int idx, int pc) {
     }
   }
 }
- = 
+
 inline void yk_set_locations(Proto *f) {
   if (get_is_verbose()){
     printf("[DEBUG] yk_set_locations. f: %p\n", f);
