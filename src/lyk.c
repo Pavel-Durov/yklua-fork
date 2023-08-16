@@ -93,19 +93,15 @@ void free_loc(Proto *f, Instruction i, int idx) {
 }
 
 inline void yk_free_locactions(Proto *f) {
-  // Funciton prototypes load can fail before we initialise yklocations.
-  // This is a workaround to prevent segfaults.
-  if (f->yklocs != NULL){
-    printf("[DEBUG] yk_free_locactions thread: %lu\n", pthread_self());
+  // YK locations are initialised as close as possible to the function loading, 
+  // However, this load can fail before we initialise `yklocs`.
+  // This NULL check is a workaround for that.
+  if (f->yklocs != NULL) {
     for (int i = 0; i < f->sizecode; i++) {
       free_loc(f, f->code[i], i);
     }
     free(f->yklocs);
     f->yklocs = NULL;
-  }else{
-    if (get_is_verbose()){
-      printf("[DEBUG] YK Locations are NULL! f: %p\n", f);
-    }
   }
 }
 
