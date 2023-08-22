@@ -556,7 +556,7 @@ typedef struct Proto {
   TValue *k;  /* constants used by the function */
   Instruction *code;  /* opcodes */
 #ifdef USE_YK
-  YkLocation *yklocs; /* JIT locations */
+  YkLocation **yklocs; /* JIT locations */
 #endif
   struct Proto **p;  /* functions defined inside the function */
   Upvaldesc *upvalues;  /* upvalue information */

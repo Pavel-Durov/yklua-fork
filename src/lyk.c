@@ -69,7 +69,7 @@ inline YkLocation *yk_lookup_ykloc(CallInfo *ci, Instruction *pc){
   Proto *p = ci_func(ci)->p;
   lua_assert(p->code <= pc && pc <= p->code + p->sizecode);
   if (is_loop_start(*pc)) {
-    ykloc = &p->yklocs[pc - p->code];
+    ykloc = p->yklocs[pc - p->code];
   }
   return ykloc;
 }
@@ -77,10 +77,10 @@ inline YkLocation *yk_lookup_ykloc(CallInfo *ci, Instruction *pc){
 inline void yk_set_location(Proto *f, Instruction i, int idx, int pc) {
   if (f->yklocs == NULL){
     print_proto_info("yk_set_location", f);
-    f->yklocs = calloc(f->sizecode, sizeof(YkLocation));
+    f->yklocs = calloc(f->sizecode, sizeof(YkLocation*));
   } else {
     // YKOPT: Reallocating for every instruction is inefficient.
-    f->yklocs = reallocarray(f->yklocs, pc, sizeof(YkLocation));
+    f->yklocs = reallocarray(f->yklocs, pc, sizeof(YkLocation*));
   }
   
   lua_assert(f->yklocs != NULL && "Expected yklocs to be defined!");
@@ -93,20 +93,23 @@ inline void yk_set_location(Proto *f, Instruction i, int idx, int pc) {
   if (is_loop_start(i))
   {
     print_proto_info("yk_location_new", f);
-    f->yklocs[idx] = yk_location_new();
+    YkLocation loc = yk_location_new();
+    f->yklocs[idx] = &loc;
   }
 
 
 }
 
 inline void yk_init_proto(Proto *f) {
-  f->yklocs = calloc(f->sizecode, sizeof(YkLocation));
+  f->yklocs = calloc(f->sizecode, sizeof(YkLocation*));
   lua_assert(f->yklocs != NULL && "Expected yklocs to be defined!");
   print_proto_info("yk_init_proto", f);
   for (int i = 0; i < f->sizecode; i++){
      if (is_loop_start(i)){
       print_proto_info("yk_location_new", f);
-      f->yklocs[i] = yk_location_new();
+      // *f->yklocs[i] = yk_location_new();
+      YkLocation loc = yk_location_new();
+      f->yklocs[i] = &loc;
     }else{
       // f->yklocs[i] = NULL;
     }
@@ -128,17 +131,19 @@ inline void yk_free_proto(Proto *f) {
     for (int i = 0; i < f->sizecode; i++) {
       if (is_loop_start(i) && &f->yklocs[i] != NULL) {
         print_proto_info("yk_location_drop", f);
-        YkLocation loc = f->yklocs[i];
-        printf("[DEBUG] Detected loop location. f->yklocs[%d]=%p\n", i, loc);
+        YkLocation *loc = f->yklocs[i];
         
-        // if (&loc == NULL){
-        //   printf("@@@@@@@@@@@@@@ YEY\n");
-        // }else{
-        //   printf("@@@@@@@@@@@@@@ NEY\n");
-        // }
+        if (f->yklocs[i] != NULL){
+          // printf("@@@@@@@@@@@@@@ YEY\n");
+          printf("[DEBUG] Detected loop location. f->yklocs[%d]=%p\n", i, *loc);
+          yk_location_drop(*loc);
+        }else{
+          printf("@@@@@@@@@@@@@@ NEY\n");
+        }
         // printf("@@@@@@@@@@@@@@ NADA\n");
+        
         // TODO: continue here
-        yk_location_drop(f->yklocs[i]);
+        
       }
     }
     free(f->yklocs);
