@@ -38,7 +38,11 @@ cd tests # navigate to tests directory
 ```shell
 run_docker_ci_job # local path to https://github.com/softdevteam/buildbot_config/blob/master/bin/run_docker_ci_job
 ```
+### Debuging
 
+```
+gdb --batch -ex 'r' -ex 'bt' --args ../src/lua all.lua yk_location_drop
+```
 ### State of Tests
 
 | Test           | Status  | Issue                                             |

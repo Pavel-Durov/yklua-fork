@@ -212,6 +212,8 @@ static void dumpHeader (DumpState *D) {
 */
 int luaU_dump(lua_State *L, const Proto *f, lua_Writer w, void *data,
               int strip) {
+  #include "stdio.h"
+  printf("@@@@@ luaU_undump f: %p \n", f);
   DumpState D;
   D.L = L;
   D.writer = w;

@@ -267,7 +267,7 @@ static void loadFunction (LoadState *S, Proto *f, TString *psource) {
   f->maxstacksize = loadByte(S);
   loadCode(S, f);
   #ifdef USE_YK
-  yk_set_locations(f);
+  yk_init_proto(f);
   #endif
   loadConstants(S, f);
   loadUpvalues(S, f);
@@ -334,6 +334,8 @@ LClosure *luaU_undump(lua_State *L, ZIO *Z, const char *name) {
   loadFunction(&S, cl->p, NULL);
   lua_assert(cl->nupvalues == cl->p->sizeupvalues);
   luai_verifycode(L, cl->p);
+  #include "stdio.h"
+  printf("@@@@@ luaU_undump f: %p \n", cl->p);
   return cl;
 }
 
