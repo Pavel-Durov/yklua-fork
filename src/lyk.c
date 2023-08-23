@@ -118,7 +118,8 @@ inline void yk_set_location(Proto *f, Instruction i, int idx, int pc)
 
 inline void yk_init_proto(Proto *f)
 {
-  f->yklocs = calloc(f->sizecode, sizeof(YkLocation));
+  // f->yklocs = calloc(f->sizecode, sizeof(YkLocation));
+  f->yklocs = reallocarray(f->yklocs, f->sizecode, sizeof(YkLocation));
   lua_assert(f->yklocs != NULL && "Expected yklocs to be defined!");
   print_proto_info("yk_init_proto", f);
   for (int i = 0; i < f->sizecode; i++)
