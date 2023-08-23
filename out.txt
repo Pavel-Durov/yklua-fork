@@ -1,0 +1,76 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+yk_new_proto 0x8f9410
+yk_new_proto 0x9263a0
+yk_new_proto 0x927180
+yk_new_proto 0x9238e0
+yk_new_proto 0x928e20
+yk_new_proto 0x9296b0
+yk_new_proto 0x9234e0
+yk_new_proto 0x92a450
+yk_new_proto 0x9251a0
+yk_new_proto 0x92a5d0
+
+	Starting Tests
+random seeds: 1692788509, 9543224
+current path:
+****/usr/local/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?/init.lua;/usr/local/lib/lua/5.4/?.lua;/usr/local/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua****
+
+    ---- total memory: 35.3K, max memory: 35.3K ----
+
+time: 0.000118 (+0.000118)
+
+***** FILE 'main.lua'*****
+[YK] yk_location_new. Location { inner: 1 }
+[YK] yk_location_drop. Location { inner: 1 }
+yk_new_proto 0x92cb20
+yk_new_proto 0x9216b0
+yk_new_proto 0x921590
+yk_new_proto 0x92e880
+[DEBUG] yk_location_new. 	 f:	0x92e880 	 source: @main.lua: 	 vars: s 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@ yk_location_new. loc: 0x1, state: 1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@ yk_location_drop. loc: 0x1, state: 1
+yk_new_proto 0x930000
+yk_new_proto 0x92f970
+@@@@@ luaU_undump f: 0x92cb20 
+yk_new_proto 0x927c10
+[DEBUG] yk_init_proto. 	 f:	0x927c10 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x921620
+[DEBUG] yk_init_proto. 	 f:	0x921620 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x92ca90
+[DEBUG] yk_init_proto. 	 f:	0x92ca90 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x923220
+[DEBUG] yk_init_proto. 	 f:	0x923220 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x92d9a0
+[DEBUG] yk_init_proto. 	 f:	0x92d9a0 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x92dba0
+[DEBUG] yk_init_proto. 	 f:	0x92dba0 	 source: @main.lua: 	 vars: (null) 
+@@@@@ luaU_undump f: 0x927c10 
+testing stand-alone interpreter
+[Detaching after vfork from child process 78769]
+progname: /home/kimchi/git-repos/yklua-fork/src/lua
+[Detaching after vfork from child process 78770]
+Lua 5.4.4  Copyright (C) 1994-2022 Lua.org, PUC-Rio
+[YK] yk_location_drop. Location { inner: 112913 }
+[YK] yk_location_drop. Location { inner: 0 }
+[YK] drop Location { inner: 0 }
+
+Program received signal SIGSEGV, Segmentation fault.
+core::sync::atomic::AtomicUsize::fetch_sub (self=<optimised out>) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/sync/atomic.rs:2575
+2575	/rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/sync/atomic.rs: No such file or directory.
+#0  core::sync::atomic::AtomicUsize::fetch_sub (self=<optimised out>) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/sync/atomic.rs:2575
+#1  alloc::sync::{impl#33}::drop<lock_api::mutex::Mutex<parking_lot::raw_mutex::RawMutex, ykrt::location::HotLocation>, alloc::alloc::Global> (self=0x7fffffffd240) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/alloc/src/sync.rs:2370
+#2  0x00007ffff7b0c65b in core::ptr::drop_in_place<alloc::sync::Arc<lock_api::mutex::Mutex<parking_lot::raw_mutex::RawMutex, ykrt::location::HotLocation>, alloc::alloc::Global>> () at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/ptr/mod.rs:497
+#3  0x00007ffff7aff82e in core::mem::drop<alloc::sync::Arc<lock_api::mutex::Mutex<parking_lot::raw_mutex::RawMutex, ykrt::location::HotLocation>, alloc::alloc::Global>> (_x=...) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/mem/mod.rs:987
+#4  0x00007ffff7b1141b in ykrt::location::{impl#1}::drop (self=0x7fffffffd2f8) at ykrt/src/location.rs:197
+#5  0x00007ffff7afea9b in core::ptr::drop_in_place<ykrt::location::Location> () at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/ptr/mod.rs:497
+#6  0x00007ffff7afe6bd in core::mem::drop<ykrt::location::Location> (_x=...) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/mem/mod.rs:987
+#7  0x00007ffff7aff648 in ykcapi::yk_location_drop (loc=...) at ykcapi/src/lib.rs:90
+#8  0x000000000088d591 in yk_free_proto (f=0x8f9410) at lyk.c:154
+#9  0x0000000000809ae8 in luaF_freeproto (L=0x919e38, f=0x8f9410) at lfunc.c:276
+#10 0x000000000080c38e in freeobj (L=0x919e38, o=0x8f9410) at lgc.c:767
+#11 0x0000000000817238 in deletelist (L=0x919e38, p=0x8f9410, limit=<optimised out>) at lgc.c:1494
+#12 0x0000000000817044 in luaC_freeallobjects (L=0x919e38) at lgc.c:1511
+#13 0x0000000000851c2d in close_state (L=0x919e38) at lstate.c:276
+#14 0x00000000008522ae in lua_close (L=0x919e38) at lstate.c:421
+#15 0x00000000007db900 in main (argc=<optimised out>, argv=<optimised out>) at lua.c:663

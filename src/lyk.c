@@ -21,9 +21,9 @@ int is_verbose()
   return LYK_VERBOSE;
 }
 
-int is_valid_yk_location(YkLocation loc) {
-  return loc.state != 0;
-}
+// int is_valid_yk_location(YkLocation loc) {
+//   return loc.state != 0;
+// }
 
 void print_proto_info(char *msg, Proto *f)
 {
@@ -37,17 +37,17 @@ void print_proto_info(char *msg, Proto *f)
     vars = getstr(f->locvars->varname);
   }
   printf("[DEBUG] %s. \t f:\t%p \t source: %s: \t vars: %s \n", msg, f, source, vars);
-  if (f->yklocs != NULL){
-    for (int i = 0; i < f->sizecode; i++){
-      printf("[DEBUG]");
-      if (is_valid_yk_location(f->yklocs[i])){
-        printf("%p->yklocs[%d]=%p,", f, i, f->yklocs[i]);
-      }else{
-        printf("%p->yklocs[%d]=NULL,", f, i);
-      }
-      printf("\n");
-    }
-  }
+  // if (f->yklocs != NULL){
+  //   for (int i = 0; i < f->sizecode; i++){
+  //     printf("[DEBUG]");
+  //     if (is_valid_yk_location(f->yklocs[i])){
+  //       printf("%p->yklocs[%d]=%p,", f, i, f->yklocs[i]);
+  //     }else{
+  //       printf("%p->yklocs[%d]=NULL,", f, i);
+  //     }
+  //     printf("\n");
+  //   }
+  // }
 }
 
 void yk_new_proto(Proto *f)
@@ -92,23 +92,27 @@ inline YkLocation *yk_lookup_ykloc(CallInfo *ci, Instruction *pc)
 
 inline void yk_set_location(Proto *f, Instruction i, int idx, int pc)
 {
-  if (f->yklocs == NULL)
-  {
-    print_proto_info("yk_set_location, calloc", f);
-    f->yklocs = calloc(f->sizecode, sizeof(YkLocation));
-  }
-  else
-  {
-    print_proto_info("yk_set_location, reallocarray", f);
+  // if (f->yklocs == NULL)
+  // {
+  //   print_proto_info("yk_set_location, calloc", f);
+  //   f->yklocs = calloc(f->sizecode, sizeof(YkLocation));
+  // }
+  // else
+  // {
+    // print_proto_info("yk_set_location, reallocarray", f);
     // YKOPT: Reallocating for every instruction is inefficient.
-    // f->yklocs = reallocarray(f->yklocs, pc, sizeof(YkLocation));
-  }
+  f->yklocs = reallocarray(f->yklocs, pc, sizeof(YkLocation));
+  // }
 
   lua_assert(f->yklocs != NULL && "Expected yklocs to be defined!");
   if (is_loop_start(i))
   {
     print_proto_info("yk_location_new", f);
-    f->yklocs[idx] = yk_location_new();
+    YkLocation loc = yk_location_new();
+    f->yklocs[idx] = loc;
+    printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@ yk_location_new. loc: %p, state: %lu\n", loc, loc.state);
+    yk_location_drop(loc);
+    printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@ yk_location_drop. loc: %p, state: %lu\n, idx: %d", loc, loc.state, idx);
   }
 }
 
@@ -137,7 +141,7 @@ inline void yk_free_proto(Proto *f)
   {
     for (int i = 0; i < f->sizecode; i++)
     {
-      if (is_loop_start(i) && &f->yklocs[i] != NULL)
+      if (is_loop_start(i))
       {
         print_proto_info("yk_location_drop", f);
         YkLocation loc = f->yklocs[i];
@@ -145,10 +149,10 @@ inline void yk_free_proto(Proto *f)
         // But YkLocations themselves can be uninitialized.
         // This check makes sure that we only free locations that are initialised via `yk_location_new` function.
         printf("[DEBUG] Detected loop location. %p->yklocs[%d]=%p\n", f, i, loc);
-        if (is_valid_yk_location(f->yklocs[i])){
+        // if (is_valid_yk_location(f->yklocs[i])){
           printf("[DEBUG] Dropped. %p->yklocs[%d]=%p\n", f, i, loc);
           yk_location_drop(loc);
-        }
+        // }
       }
     }
     free(f->yklocs);

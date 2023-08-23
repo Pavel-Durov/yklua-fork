@@ -1,0 +1,550 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+yk_new_proto 0x8fa410
+[DEBUG] yk_set_location, calloc. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+yk_new_proto 0x925b50
+[DEBUG] yk_set_location, calloc. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x925b50 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+yk_new_proto 0x924750
+yk_new_proto 0x9241c0
+[DEBUG] yk_set_location, calloc. 	 f:	0x9241c0 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9241c0 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9241c0 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9241c0 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9241c0 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9241c0 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9241c0 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, calloc. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9241c0 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x924750 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+yk_new_proto 0x926f60
+[DEBUG] yk_set_location, calloc. 	 f:	0x926f60 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x926f60 	 source: @all.lua: 	 vars: m 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+yk_new_proto 0x9273b0
+[DEBUG] yk_set_location, calloc. 	 f:	0x9273b0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9273b0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9273b0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+yk_new_proto 0x9274c0
+[DEBUG] yk_set_location, calloc. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9274c0 	 source: @all.lua: 	 vars: total 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+yk_new_proto 0x9276b0
+[DEBUG] yk_set_location, calloc. 	 f:	0x9276b0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9276b0 	 source: @all.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9276b0 	 source: @all.lua: 	 vars: _ 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9276b0 	 source: @all.lua: 	 vars: _ 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+yk_new_proto 0x9255d0
+[DEBUG] yk_set_location, calloc. 	 f:	0x9255d0 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9255d0 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9255d0 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9255d0 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9255d0 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9255d0 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9255d0 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+yk_new_proto 0x91ef80
+[DEBUG] yk_set_location, calloc. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91ef80 	 source: @all.lua: 	 vars: n 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x8fa410 	 source: @all.lua: 	 vars: version 
+
+	Starting Tests
+random seeds: 1692786595, 9547320
+current path:
+****/usr/local/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?/init.lua;/usr/local/lib/lua/5.4/?.lua;/usr/local/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua****
+
+    ---- total memory: 35.3K, max memory: 35.3K ----
+
+time: 7e-05 (+7e-05)
+
+***** FILE 'main.lua'*****
+yk_new_proto 0x91f330
+[DEBUG] yk_set_location, calloc. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+yk_new_proto 0x922b40
+[DEBUG] yk_set_location, calloc. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922b40 	 source: @main.lua: 	 vars: s 
+yk_new_proto 0x922ab0
+[DEBUG] yk_set_location, calloc. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: (null) 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x922ab0 	 source: @main.lua: 	 vars: t 
+yk_new_proto 0x92a140
+[DEBUG] yk_set_location, calloc. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_location_new. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92a140 	 source: @main.lua: 	 vars: s 
+yk_new_proto 0x92b4e0
+[DEBUG] yk_set_location, calloc. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x92b4e0 	 source: @main.lua: 	 vars: s 
+yk_new_proto 0x9261a0
+[DEBUG] yk_set_location, calloc. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x9261a0 	 source: @main.lua: 	 vars: p 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+[DEBUG] yk_set_location, reallocarray. 	 f:	0x91f330 	 source: @main.lua: 	 vars: arg 
+@@@@@ luaU_undump f: 0x91f330 
+yk_new_proto 0x926450
+[DEBUG] yk_init_proto. 	 f:	0x926450 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x926740
+[DEBUG] yk_init_proto. 	 f:	0x926740 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x9268c0
+[DEBUG] yk_init_proto. 	 f:	0x9268c0 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x926b20
+[DEBUG] yk_init_proto. 	 f:	0x926b20 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x9298a0
+[DEBUG] yk_init_proto. 	 f:	0x9298a0 	 source: @main.lua: 	 vars: (null) 
+yk_new_proto 0x929aa0
+[DEBUG] yk_init_proto. 	 f:	0x929aa0 	 source: @main.lua: 	 vars: (null) 
+@@@@@ luaU_undump f: 0x926450 
+testing stand-alone interpreter
+[Detaching after vfork from child process 61202]
+progname: /home/kimchi/git-repos/yklua-fork/src/lua
+[Detaching after vfork from child process 61203]
+Lua 5.4.4  Copyright (C) 1994-2022 Lua.org, PUC-Rio
+[YK] yk_location_drop: Dropping location: Location { inner: 4 }
+[YK] drop Location { inner: 4 }
+
+Program received signal SIGSEGV, Segmentation fault.
+core::sync::atomic::AtomicUsize::fetch_sub (self=<optimised out>) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/sync/atomic.rs:2575
+2575	/rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/sync/atomic.rs: No such file or directory.
+#0  core::sync::atomic::AtomicUsize::fetch_sub (self=<optimised out>) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/sync/atomic.rs:2575
+#1  alloc::sync::{impl#33}::drop<lock_api::mutex::Mutex<parking_lot::raw_mutex::RawMutex, ykrt::location::HotLocation>, alloc::alloc::Global> (self=0x7fffffffd230) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/alloc/src/sync.rs:2370
+#2  0x00007ffff7b0c59b in core::ptr::drop_in_place<alloc::sync::Arc<lock_api::mutex::Mutex<parking_lot::raw_mutex::RawMutex, ykrt::location::HotLocation>, alloc::alloc::Global>> () at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/ptr/mod.rs:497
+#3  0x00007ffff7aff76e in core::mem::drop<alloc::sync::Arc<lock_api::mutex::Mutex<parking_lot::raw_mutex::RawMutex, ykrt::location::HotLocation>, alloc::alloc::Global>> (_x=...) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/mem/mod.rs:987
+#4  0x00007ffff7b1135b in ykrt::location::{impl#1}::drop (self=0x7fffffffd2e8) at ykrt/src/location.rs:197
+#5  0x00007ffff7afea9b in core::ptr::drop_in_place<ykrt::location::Location> () at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/ptr/mod.rs:497
+#6  0x00007ffff7afe6bd in core::mem::drop<ykrt::location::Location> (_x=...) at /rustc/ef85656a10657ba5e4f7fe2931a4ca6293138d51/library/core/src/mem/mod.rs:987
+#7  0x00007ffff7aff588 in ykcapi::yk_location_drop (loc=...) at ykcapi/src/lib.rs:88
+#8  0x000000000088e689 in yk_free_proto (f=0x8fa410) at lyk.c:150
+#9  0x000000000080ab18 in luaF_freeproto (L=0x91ae38, f=0x8fa410) at lfunc.c:276
+#10 0x000000000080d3be in freeobj (L=0x91ae38, o=0x8fa410) at lgc.c:767
+#11 0x0000000000818268 in deletelist (L=0x91ae38, p=0x8fa410, limit=<optimised out>) at lgc.c:1494
+#12 0x0000000000818074 in luaC_freeallobjects (L=0x91ae38) at lgc.c:1511
+#13 0x0000000000852c5d in close_state (L=0x91ae38) at lstate.c:276
+#14 0x00000000008532de in lua_close (L=0x91ae38) at lstate.c:421
+#15 0x00000000007dc930 in main (argc=<optimised out>, argv=<optimised out>) at lua.c:663
