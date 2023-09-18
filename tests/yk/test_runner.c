@@ -9,7 +9,7 @@ void test_addition() {
     // printf("test_addition!\n");
 }
 
-void expect_uk_locations_to_not_be_set() {
+void expect_yk_locations_to_not_be_set() {
     // Your test code here
     // assert(1 == 2 && "expected for math to not work!");
     // Proto *p = pe
@@ -18,7 +18,7 @@ void expect_uk_locations_to_not_be_set() {
 int main() {
     // Run your test functions
     test_addition();
-    expect_uk_locations_to_not_be_set();
+    expect_yk_locations_to_not_be_set();
 
     printf("All tests passed!\n");
     return 0;
