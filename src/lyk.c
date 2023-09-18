@@ -1,3 +1,5 @@
+#define USE_YK
+#define LYK_DEBUG
 #ifdef USE_YK
 
 #include "lyk.h"
@@ -42,6 +44,9 @@ void print_proto_info(char *msg, Proto *f) {
   printf("[LYK] %s. \t f:\t%p \t source: %s: \t vars: %s", msg, f, source, vars);
   if (f->yklocs != NULL) {
     printf("\t sizecode: %d", f->sizecode);
+    for (int i = 0; i < f->sizecode; i++) {
+        printf("[LYK] %p->yklocs[%d]=%p\n", f, i, f->yklocs[i]);
+    }
   }
   printf("\n");
 }
@@ -51,6 +56,7 @@ void yk_on_newproto(Proto *f) {
   #ifdef LYK_DEBUG
   if (is_verbose()) {
     printf("[LYK] yk_new_proto %p\n", f);
+    // print_proto_info("yk_new_proto", f0)
   }
   #endif // LYK_DEBUG
   f->yklocs = NULL;
@@ -69,11 +75,19 @@ int is_loop_start(Instruction i) {
 
 inline YkLocation *yk_lookup_ykloc(CallInfo *ci, Instruction *pc) {
   YkLocation *ykloc = NULL;
+  
   lua_assert(isLua(ci));
   Proto *p = ci_func(ci)->p;
   lua_assert(p->code <= pc && pc <= p->code + p->sizecode);
   if (is_loop_start(*pc)) {
     ykloc = p->yklocs[pc - p->code];
+    if (is_verbose()) {
+      printf("[LYK] yk_lookup_ykloc %p->ykloc[%ld]=%p at: %ld\n", p, pc - p->code, ykloc);
+      for (int i = 0; i < p->sizecode; i++) {
+        // if (p->ykloc[i] == NULL){}
+        printf("[LYK] %p->yklocs[%d]=%p\n", p, i, p->yklocs[i]);
+      }
+    }
   }
   return ykloc;
 }
@@ -85,7 +99,8 @@ void set_location(Proto *f, int i) {
   f->yklocs[i] = loc;
   #ifdef LYK_DEBUG
   if (is_verbose()){
-    printf("[LYK] yk_location_new. %p->yklocs[%d]=%p\n", f, i, loc);
+    printf("[LYK] set_location. %p->yklocs[%d]=%p\n", f, i, loc);
+    // print("set_location", f);
   }
   #endif // LYK_DEBUG
 }
@@ -118,14 +133,16 @@ inline void yk_on_instruction_loaded(Proto *f, Instruction i, int idx) {
 
 inline void yk_on_proto_loaded(Proto *f) {
   #ifdef LYK_DEBUG
-  print_proto_info("yk_set_locations", f);
+  print_proto_info("yk_on_proto_loaded", f);
   #endif // LYK_DEBUG
   f->yklocs = calloc(f->sizecode, sizeof(YkLocation *));
   lua_assert(f->yklocs != NULL && "Expected yklocs to be defined!");
   f->yklocs_size = f->sizecode;
   for (int i = 0; i < f->sizecode; i++) {
-    if (is_loop_start(i)) {
+    if (is_loop_start(f->code[i])) {
       set_location(f, i);
+    }else{
+      printf("[LYK] yk_on_proto_loaded. %p->yklocs[%d]=NOT A LOOP, opcode: %d\n", f, i, GET_OPCODE(i));
     }
   }
 }
