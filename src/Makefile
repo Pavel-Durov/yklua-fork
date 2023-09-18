@@ -90,10 +90,14 @@ $(LUAC_T): $(LUAC_O) $(LUA_A)
 	$(CC) -o $@ $(LDFLAGS) $(LUAC_O) $(LUA_A) $(LIBS)
 
 test:
-	./$(LUA_T) -v
-
+	$(RM) test_runner.o 
+	$(CC) -c $(CFLAGS) $(CMCFLAGS) -o test_runner.o ../tests/yk/test_runner.c 
+	$(CC) -o test_runner $(LDFLAGS) test_runner.o $(BASE_O) $(LUA_A) $(LIBS)
+	# $(CC) -o test_runner $(CFLAGS) $(LDFLAGS) test_runner.o $(BASE_O) $(LUA_A) $(LIBS)
+	./test_runner
+ 
 clean:
-	$(RM) $(ALL_T) $(ALL_O)
+	$(RM) $(ALL_T) $(ALL_O) ../test_runner
 
 depend:
 	@$(CC) $(CFLAGS) -MM l*.c
@@ -242,4 +246,6 @@ lvm.o: lvm.c lprefix.h lua.h luaconf.h ldebug.h lstate.h lobject.h \
 lzio.o: lzio.c lprefix.h lua.h luaconf.h llimits.h lmem.h lstate.h \
  lobject.h ltm.h lzio.h
 lyk.o: lyk.h lyk.c
+test_runner.o: lobject.h
 # (end of Makefile)
+
