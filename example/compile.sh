@@ -1,0 +1,1 @@
+gcc -shared -fPIC -o threading.so threading.c

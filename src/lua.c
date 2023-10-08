@@ -646,6 +646,26 @@ static int pmain (lua_State *L) {
   return 1;
 }
 
+#include <dlfcn.h>
+
+int test() {
+    void* handle = dlopen("./example/threading.so", RTLD_LAZY);
+    if (!handle) {
+        fprintf(stderr, "Error: %s\n", dlerror());
+        return 1;
+    }
+    typedef void (*ThreadFunctionType)();
+    ThreadFunctionType thread_function = (ThreadFunctionType)dlsym(handle, "do_threads");
+    if (!thread_function) {
+        fprintf(stderr, "Error: %s\n", dlerror());
+        dlclose(handle); // Close the library
+        return 1;
+    }
+    thread_function();
+    dlclose(handle);
+    return 1;
+}
+
 
 int main (int argc, char **argv) {
   int status, result;
@@ -661,6 +681,7 @@ int main (int argc, char **argv) {
   result = lua_toboolean(L, -1);  /* get result */
   report(L, status);
   lua_close(L);
+  test();
   return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
 
