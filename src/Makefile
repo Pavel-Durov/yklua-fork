@@ -62,6 +62,7 @@ BASE_O= $(CORE_O) $(LIB_O) $(MYOBJS)
 
 LUA_T=	lua
 LUA_O=	lua.o
+ONE_LUA= onelua.c 
 
 LUAC_T=	luac
 LUAC_O=	luac.o
@@ -71,7 +72,7 @@ ALL_T= $(LUA_T) $(LUAC_T) $(LUA_A)
 ALL_A= $(LUA_A)
 
 # Targets start here.
-default: $(PLAT)
+default: $(PLAT) $(ONE_LUA) 
 
 all:	$(ALL_T)
 
@@ -86,14 +87,20 @@ $(LUA_A): $(BASE_O)
 $(LUA_T): $(LUA_O) $(LUA_A)
 	$(CC) -o $@ $(LDFLAGS) $(LUA_O) $(LUA_A) $(LIBS)
 
+$(LUA_O): $(ONE_LUA)  # Changed dependency to .i file
+	$(CC) -c $(CFLAGS) -o $@ $(ONE_LUA)
+
 $(LUAC_T): $(LUAC_O) $(LUA_A)
 	$(CC) -o $@ $(LDFLAGS) $(LUAC_O) $(LUA_A) $(LIBS)
+
+$(ONE_LUA): one.c   # New target for preprocessing
+	$(CC) $(CFLAGS) -E one.c -o $(ONE_LUA)
 
 test:
 	./$(LUA_T) -v
 
 clean:
-	$(RM) $(ALL_T) $(ALL_O)
+	$(RM) $(ALL_T) $(ALL_O) $(ONE_LUA)
 
 depend:
 	@$(CC) $(CFLAGS) -MM l*.c
