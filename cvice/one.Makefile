@@ -51,24 +51,33 @@ PLATS= guess aix bsd freebsd generic linux linux-readline macosx mingw posix sol
 
 LUA_T=	lua
 LUA_O=	one.o
-ONE_LUA= onelua.c
+ONE_LUA_C= onelua.c
+
+ONE_LUA_T=	onelua
+ONE_LUA_O=	onelua.o
 
 # Targets start here.
-default: $(PLAT) $(ONE_LUA)  
+default: $(PLAT) $(ONE_LUA_C) $(ONE_LUA_T)
 
-all: $(LUA_T)
+all: $(LUA_T) $(ONE_LUA_T)
+
+$(ONE_LUA_T): $(ONE_LUA_O)
+	$(CC) -o $@ $(LDFLAGS) $(ONE_LUA_O) $(LIBS)
+
+$(ONE_LUA_O): $(ONE_LUA_C)
+	$(CC) -c $(CFLAGS) -o $@ $(ONE_LUA_C)
 
 $(LUA_T): $(LUA_O)
 	$(CC) -o $@ $(LDFLAGS) $(LUA_O) $(LIBS)
 
-$(LUA_O): $(ONE_LUA)  # Changed dependency to .i file
-	$(CC) -c $(CFLAGS) -o $@ $(ONE_LUA)
+$(LUA_O): $(ONE_LUA_C)  # Changed dependency to .i file
+	$(CC) -c $(CFLAGS) -o $@ $(ONE_LUA_C)
 
-$(ONE_LUA): one.c   # New target for preprocessing
-	$(CC) $(CFLAGS) -E one.c -o $(ONE_LUA)
+$(ONE_LUA_C): one.c   # New target for preprocessing
+	$(CC) $(CFLAGS) -E one.c -o $(ONE_LUA_C)
 
 clean:
-	$(RM) $(LUA_T) $(LUA_O) $(ONE_LUA) 
+	$(RM) $(LUA_T) $(LUA_O) $(ONE_LUA_C) $(ONE_LUA_T) $(ONE_LUA_O)
 
 echo:
 	@echo "PLAT= $(PLAT)"

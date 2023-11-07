@@ -12,4 +12,4 @@ export PATH=/home/pd/yk/bin/:${PATH}
 cp /home/pd/yklua-fork/cvice/Makefile Makefile
 make clean
 make
-onelua -e "print('hello from onelua')" | grep hello
+"${PWD}/onelua" -e "print('hello from onelua')" | grep hello

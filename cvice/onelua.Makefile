@@ -48,22 +48,22 @@ CMCFLAGS=
 
 PLATS= guess aix bsd freebsd generic linux linux-readline macosx mingw posix solaris
 
-LUA_T=	onelua
-LUA_O=	onelua.o
+ONE_LUA_T=	onelua
+ONE_LUA_O=	onelua.o
 
 # Targets start here.
-default: $(PLAT) $(LUA_T)
+default: $(PLAT) $(ONE_LUA_T)
 
-all: $(LUA_T)
+all: $(ONE_LUA_T)
 
-$(LUA_T): $(LUA_O)
-	$(CC) -o $@ $(LDFLAGS) $(LUA_O) $(LIBS)
+$(ONE_LUA_T): $(ONE_LUA_O)
+	$(CC) -o $@ $(LDFLAGS) $(ONE_LUA_O) $(LIBS)
 
-$(LUA_O): onelua.c # Changed dependency to .i file
+$(ONE_LUA_O): onelua.c # Changed dependency to .i file
 	$(CC) -c $(CFLAGS) -o $@ onelua.c
 
 clean:
-	$(RM) $(LUA_T) $(LUA_O)
+	$(RM) $(ONE_LUA_T) $(ONE_LUA_O)
 
 echo:
 	@echo "PLAT= $(PLAT)"
