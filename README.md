@@ -48,6 +48,19 @@ LYK_VERBOSE=1 ../src/lua all.lua
 LYK_VERBOSE=1 sh ./test.sh
 ```
 
+### C-Vice
+
+[C-Vice](https://github.com/marxin/cvise)
+
+Run C-Vice:
+
+```shell
+cd ./cvice
+bash ./build.sh
+cd src
+bash cvice.sh
+```
+
 ### State of Tests
 
 | Test           | Status  | Issue                                             |

@@ -62,7 +62,6 @@ BASE_O= $(CORE_O) $(LIB_O) $(MYOBJS)
 
 LUA_T=	lua
 LUA_O=	lua.o
-ONE_LUA= onelua.c 
 
 LUAC_T=	luac
 LUAC_O=	luac.o
@@ -71,10 +70,22 @@ ALL_O= $(BASE_O) $(LUA_O) $(LUAC_O)
 ALL_T= $(LUA_T) $(LUAC_T) $(LUA_A)
 ALL_A= $(LUA_A)
 
+# onelua vars
+
+ONE_LUA_T=	onelua
+ONE_LUA_O=	onelua.o
+ONE_LUA_C=	onelua.c
+
+ONE_T=	one
+ONE_O=	one.o
+ONE_C=	one.c
+
 # Targets start here.
-default: $(PLAT) $(ONE_LUA) 
+default: $(PLAT)
 
 all:	$(ALL_T)
+
+## end
 
 o:	$(ALL_O)
 
@@ -87,20 +98,36 @@ $(LUA_A): $(BASE_O)
 $(LUA_T): $(LUA_O) $(LUA_A)
 	$(CC) -o $@ $(LDFLAGS) $(LUA_O) $(LUA_A) $(LIBS)
 
-$(LUA_O): $(ONE_LUA)  # Changed dependency to .i file
-	$(CC) -c $(CFLAGS) -o $@ $(ONE_LUA)
-
 $(LUAC_T): $(LUAC_O) $(LUA_A)
 	$(CC) -o $@ $(LDFLAGS) $(LUAC_O) $(LUA_A) $(LIBS)
 
-$(ONE_LUA): one.c   # New target for preprocessing
-	$(CC) $(CFLAGS) -E one.c -o $(ONE_LUA)
+# onelua start
+
+$(ONE_LUA_T): $(ONE_LUA_O)
+	$(CC) -o $@ $(LDFLAGS) $(ONE_LUA_O) $(LIBS)
+
+$(ONE_LUA_O): $(ONE_LUA_C)
+	$(CC) -c $(CFLAGS) -o $@ $(ONE_LUA_C)
+
+$(ONE_T): $(ONE_C)
+	$(CC) -o $@ $(LDFLAGS) $(ONE_C) $(LIBS)
+
+$(ONE_C):
+	$(CC) -c $(CFLAGS) -o $@ $(ONE_LUA_C)
+
+$(ONE_LUA_C): $(ONE_C)
+	$(CC) $(CFLAGS) -E $(ONE_C) -o $(ONE_LUA_C)
+
+$(ONE_LUA_T)_clean:
+	$(RM) $(ONE_LUA_T) $(ONE_LUA_C) $(ONE_LUA_O)
+
+# onelua end
 
 test:
 	./$(LUA_T) -v
 
-clean:
-	$(RM) $(ALL_T) $(ALL_O) $(ONE_LUA)
+clean: $(ONE_LUA_T)_clean
+	$(RM) $(ALL_T) $(ALL_O)
 
 depend:
 	@$(CC) $(CFLAGS) -MM l*.c
