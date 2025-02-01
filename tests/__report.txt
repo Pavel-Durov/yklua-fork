@@ -1,1 +1,41 @@
-__interest.sh
+## Output of shrinkray
+
+Reduction completed!
+Deleted 4.4 kB out of 5.4 kB (81.90% reduction) in 3 minutes and 23.96 seconds
+
+## Cstack.lua contents
+
+```lua
+-- $Id: testes/cstack.lua $
+-- See Copyright Notice in file all.lua
+local tracegc = require"tracegc"
+-- Segmentation faults in these tests probably result from a C-stack
+-- overflow. To avoid these errors, you should set a smaller limit for
+-- the use of C stack by Lua, by changing the constant ''.
+-- Alternatively, you can ensure a larger stack for the program.
+local function checkerror (msg, f, ...)
+local s, err = pcall(f, ...)
+assert(not s and string.find(err, msg))
+end
+do  print("")
+local function loop (x, y, z)
+return 1 + loop(x, y, z)
+local previous = coro
+coro = coroutine.create(function()
+return
+end
+N = N + 1
+f()
+end
+local topB, sizeB-- top and size Before overflow
+local topA, sizeA -- top and size After overflow
+topB, sizeB = T.stacklevel()
+topA, sizeA = T.stacklevel()
+-- sizes should be comparable
+assert(topA == topB and sizeA < sizeB * 2)
+print(string.format("", stack1))
+LIM = N-- will stop recursion at maximum level
+N = 0-- to count again
+end
+print''
+```
