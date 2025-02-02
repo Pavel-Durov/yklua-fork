@@ -21,6 +21,8 @@ fi
 LOG_FILE=./log.shrinkray.log
 # Run the Lua script and capture output
 RUST_BACKTRACE=full YKD_OPT=0 YKD_SERIALISE_COMPILATION=1 "$LUA_EXEC" -e "_U=true" "$INPUT" > "$LOG_FILE" 2>&1
+
+
 # First check: is the file syntactically valid? (using luac)
 # if ! luac -p "$INPUT" 2>/dev/null; then
 #     echo "not interesting (syntax error)."
@@ -31,10 +33,11 @@ RUST_BACKTRACE=full YKD_OPT=0 YKD_SERIALISE_COMPILATION=1 "$LUA_EXEC" -e "_U=tru
 ERROR_PATTERN="attempt to call a boolean value (field 'resume')"
 if grep -q "$ERROR_PATTERN" "$LOG_FILE"; then
     echo "interesting!"
-    rm "$LOG_FILE"
+    echo "$ERROR_PATTERN"
+    # rm "$LOG_FILE"
     exit 0
 else
     echo "not interesting."
-    rm "$LOG_FILE"
+    # rm "$LOG_FILE"
     exit 1
 fi
