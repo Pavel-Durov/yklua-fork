@@ -905,7 +905,7 @@ void luaV_finishOp (lua_State *L) {
 #  define op_arithI(L,iop,fop) {  \
   StkId ra = RA(i); \
   TValue *v1 = vRB(i);  \
-  int imm = yk_promote(GETARG_sC(i));  \
+  int imm = GETARG_sC(i);  \
   if (ttisinteger(v1)) {  \
     lua_Integer iv1 = ivalue(v1);  \
     pc++; setivalue(s2v(ra), iop(L, iv1, imm));  \
@@ -1049,7 +1049,7 @@ void luaV_finishOp (lua_State *L) {
 #  define op_orderI(L,opi,opf,inv,tm) {  \
   StkId ra = RA(i); \
   int cond;  \
-  int im = yk_promote(GETARG_sB(i));  \
+  int im = GETARG_sB(i);  \
   if (ttisinteger(s2v(ra)))  \
     cond = opi(ivalue(s2v(ra)), im);  \
   else if (ttisfloat(s2v(ra))) {  \
@@ -1171,22 +1171,14 @@ void luaV_finishOp (lua_State *L) {
 /* fetch an instruction and prepare its execution */
 #ifdef USE_YK
 #define NOOPT_VAL(X) asm volatile("" : "+r,m"(X) : : "memory");
-// Elide instruction lookup.
-__attribute__((yk_idempotent))
-Instruction load_inst(uint64_t pv, const Instruction *pc) {
-  NOOPT_VAL(pv);
-  return *pc;
-}
+
 
 #  define vmfetch()	{ \
   if (l_unlikely(trap)) {  /* stack reallocation or hooks? */ \
     trap = luaG_traceexec(L, pc);  /* handle hooks */ \
     updatebase(ci);  /* correct stack */ \
   } \
-  pc = (Instruction *) yk_promote((void *) pc); \
-  uint64_t pv = yk_promote(cl_proto_version); \
-  i = load_inst(pv, pc); \
-  pc++; \
+  i = *(pc++); \
 }
 #else
 #  define vmfetch()	{ \
@@ -1216,9 +1208,6 @@ void luaV_execute (lua_State *L, CallInfo *ci) {
   trap = L->hookmask;
  returning:  /* trap already set */
   cl = clLvalue(s2v(ci->func.p));
-#ifdef USE_YK
-  uint64_t cl_proto_version = cl->p->proto_version;
-#endif
   k = cl->p->k;
   pc = ci->u.l.savedpc;
   if (l_unlikely(trap)) {
@@ -1595,7 +1584,7 @@ void luaV_execute (lua_State *L, CallInfo *ci) {
         StkId ra = RA(i);
         Instruction pi = *(pc - 2);  /* original arith. expression */
 #ifdef USE_YK
-        int imm = yk_promote(GETARG_sB(i));
+        int imm = GETARG_sB(i);
 #else
         int imm = GETARG_sB(i);
 #endif
@@ -1706,7 +1695,7 @@ void luaV_execute (lua_State *L, CallInfo *ci) {
         StkId ra = RA(i);
         int cond;
 #ifdef USE_YK
-        int im = yk_promote(GETARG_sB(i));
+        int im = GETARG_sB(i);
 #else
         int im = GETARG_sB(i);
 #endif

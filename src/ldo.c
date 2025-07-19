@@ -531,12 +531,12 @@ l_sinline int precallC (lua_State *L, StkId func, int nresults,
   }
   lua_unlock(L);
   /* do the actual call */
-#ifdef USE_YK
-  f = (lua_CFunction) yk_promote((void *) *f);
-  n = (f)(L);
-#else
+// #ifdef USE_YK
+//   f = (lua_CFunction) yk_promote((void *) *f);
+//   n = (f)(L);
+// #else
   n = (*f)(L);
-#endif
+// #endif
   lua_lock(L);
   api_checknelems(L, n);
   luaD_poscall(L, ci, n);
